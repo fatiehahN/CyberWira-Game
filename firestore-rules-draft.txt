@@ -1,0 +1,73 @@
+
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+
+    // Existing player profiles
+    match /users/{uid} {
+      allow get: if isOwner(uid);
+      allow list: if false;
+
+      allow create: if isOwner(uid);
+
+      allow update: if isOwner(uid);
+
+      allow delete: if false;
+    }
+
+    // Existing username mapping
+    match /usernames/{username} {
+      allow get: if true;
+      allow list: if false;
+
+      allow create: if signedIn()
+        && request.resource.data.uid == request.auth.uid;
+
+      allow update, delete: if false;
+    }
+
+    // Registered schools
+    match /schools/{schoolCode} {
+      allow get: if signedIn()
+        && resource.data.status == "active";
+
+      allow list: if false;
+      allow create, update, delete: if false;
+    }
+
+    // Teacher applications
+    match /teacherApplications/{uid} {
+      allow get: if isOwner(uid);
+      allow list: if false;
+
+      allow create: if isOwner(uid)
+        && request.resource.data.status == "pending"
+        && request.resource.data.email == request.auth.token.email
+        && request.resource.data.schoolCode is string
+        && get(
+          /databases/$(database)/documents/schools/$(request.resource.data.schoolCode)
+        ).data.status == "active";
+
+      // Only admin changes application status manually
+      allow update, delete: if false;
+    }
+
+    // Approved teacher profiles
+    match /teachers/{uid} {
+      allow get: if isOwner(uid)
+        && resource.data.status == "approved";
+
+      allow list: if false;
+      allow create, update, delete: if false;
+    }
+  }
+}

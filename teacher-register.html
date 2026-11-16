@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Registration | CyberWira</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .auth-container {
+      max-width: 500px;
+      margin: 45px auto;
+      padding: 35px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.07);
+    }
+
+    .auth-container h1 { margin-bottom: 8px; }
+    .auth-subtitle { color: #64748b; margin-bottom: 25px; }
+
+    .auth-form label {
+      display: block;
+      margin: 15px 0 7px;
+      font-weight: 600;
+    }
+
+    .auth-form input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 15px;
+      box-sizing: border-box;
+    }
+
+    .auth-note {
+      margin-top: 18px;
+      padding: 13px;
+      background: #eff6ff;
+      border-radius: 8px;
+      color: #1e40af;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .auth-button {
+      width: 100%;
+      margin-top: 23px;
+      padding: 13px;
+      border: none;
+      border-radius: 8px;
+      background: #123b65;
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .auth-footer {
+      margin-top: 22px;
+      text-align: center;
+      color: #484bb7;
+    }
+
+    .auth-footer a { color: #123b65; font-weight: 600; }
+    .back-link { display: block; margin-top: 20px; text-align: center; }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span class="brand-shield">⬟</span>
+      <span class="brand-copy">
+        <span class="brand-name">CYBER<span>WIRA</span></span>
+        <span class="brand-subtitle">Cybersecurity Awareness &amp; Learning Portal</span>
+      </span>
+      <span class="brand-tag">TEACHER PORTAL</span>
+    </a>
+    <nav class="main-nav">
+      <a class="nav-link" href="index.html#game">🎮 Play Game</a>
+      <a class="nav-link active" href="teacher.html">📊 Teacher Portal</a>
+    </nav>
+  </header>
+
+  <main class="page-container">
+    <section class="auth-container">
+      <h1>Teacher Registration</h1>
+      <p class="auth-subtitle">Create an account to monitor your students' CyberWira progress.</p>
+
+      <form class="auth-form">
+        <label for="teacherName">Full Name</label>
+        <input type="text" id="teacherName" placeholder="Enter your full name" required>
+
+        <label for="email">Official Email Address</label>
+        <input type="email" id="email" placeholder="Enter your school email" required>
+
+        <label for="schoolName">School Name</label>
+        <input type="text" id="schoolName" placeholder="Enter your school name" required>
+
+        <label for="schoolCode">School Code</label>
+        <input type="text" id="schoolCode" placeholder="Enter your school code" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Create a password" required>
+
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" placeholder="Re-enter your password" required>
+
+        <div class="auth-note">
+          Your registration will be submitted for administrator approval.
+          You can access the Teacher Dashboard after your account is approved.
+        </div>
+
+       <button type="submit" class="auth-button" id="registerButton">
+        Submit Registration
+        </button>
+      </form>
+      <p id="registerMessage"></p>
+
+      <p class="auth-footer">
+        Already have an account?
+        <a href="teacher-login.html">Login here</a>
+      </p>
+
+      <a class="back-link" href="teacher.html">← Back to Teacher Portal</a>
+    </section>
+  </main>
+  <script type="module" src="teacher-register.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CyberWira - Cybersecurity Awareness and Learning Portal">
+  <title>CyberWira | Cybersecurity Awareness Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="CyberWira home">
+      <span class="brand-shield">⬟</span>
+      <span class="brand-copy">
+        <span class="brand-name">CYBER<span>WIRA</span></span>
+        <span class="brand-subtitle">Cybersecurity Awareness &amp; Learning Portal</span>
+      </span>
+      <span class="brand-tag">3D DEFENDER</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <a class="nav-link active" href="#game">
+        <span aria-hidden="true">🎮</span> Play Game
+      </a>
+      <a class="nav-link" href="teacher.html">
+        <span aria-hidden="true">📊</span> Teacher Dashboard
+      </a>
+    </nav>
+
+    <div class="connection-status">
+      <span class="status-dot"></span>
+      <span id="status-text">Local Preview</span>
+    </div>
+  </header>
+
+  <main class="page-container">
+    <section class="notice-panel" aria-labelledby="guide-title">
+      <div class="notice-icon" aria-hidden="true">🖱</div>
+      <div class="notice-copy">
+        <div class="notice-heading">
+          <h1 id="guide-title">Laptop &amp; Controls Guide</h1>
+          <span class="notice-label">Notice</span>
+        </div>
+        <p>
+          For the best experience, play on a laptop or desktop.
+          Select <strong>Play Fullscreen</strong> for a larger view.
+          Press <kbd>ESC</kbd> to release your mouse cursor when supported by the game.
+        </p>
+      </div>
+      <div class="notice-actions">
+        <button class="button button-primary" id="fullscreen-button" type="button">
+          ⛶ Play Fullscreen
+        </button>
+        <button class="button button-secondary" id="reload-button" type="button">
+          ↻ Reload Game
+        </button>
+      </div>
+    </section>
+
+    <section class="game-section" id="game" aria-label="CyberWira game">
+      <div class="game-toolbar">
+        <div class="window-controls" aria-hidden="true">
+          <span class="window-dot red"></span>
+          <span class="window-dot yellow"></span>
+          <span class="window-dot green"></span>
+        </div>
+        <span class="game-toolbar-title">CyberWira • Embedded Game</span>
+        <span class="game-source-label">Game source: itch.io</span>
+      </div>
+
+      <div class="game-frame-wrap" id="game-frame-wrap">
+        <iframe
+          id="cyberwira-game"
+          src="https://itch.io/embed-upload/20587184?color=333333"
+          title="CyberWira game"
+          allow="autoplay; fullscreen; gamepad"
+          allowfullscreen
+          loading="eager">
+        </iframe>
+
+        <div class="game-placeholder" id="game-placeholder">
+          <div class="placeholder-icon">🎮</div>
+          <h2>Your CyberWira game will appear here</h2>
+          <p>Next, replace the sample iframe address in <code>index.html</code> with your game's itch.io embed URL.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <span>© <span id="current-year"></span> CyberWira</span>
+      <span>Learn • Identify • Protect</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

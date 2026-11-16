@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Dashboard | CyberWira</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="teacher-dashboard.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="teacher-dashboard.html">
+      <span class="brand-shield">⬟</span>
+      <span class="brand-copy">
+        <span class="brand-name">CYBER<span>WIRA</span></span>
+        <span class="brand-subtitle">
+          Cybersecurity Awareness &amp; Learning Portal
+        </span>
+      </span>
+      <span class="brand-tag">TEACHER PORTAL</span>
+    </a>
+
+    <nav class="main-nav">
+      <a class="nav-link active" href="teacher-dashboard.html">
+        📊 Dashboard
+      </a>
+      <button class="nav-link" id="logoutButton" type="button">
+        Logout
+      </button>
+    </nav>
+  </header>
+
+  <main class="dashboard-container">
+
+    <section class="dashboard-heading">
+      <div>
+        <p class="dashboard-label">TEACHER ANALYTICS</p>
+        <h1>CyberWira Dashboard</h1>
+        <p class="dashboard-subtitle">
+          Overview of cybersecurity awareness and gameplay performance.
+        </p>
+      </div>
+
+      <button id="refreshButton" class="refresh-button" type="button">
+        ↻ Refresh Data
+      </button>
+    </section>
+
+    <p id="dashboardMessage" class="dashboard-message">
+      Loading dashboard data...
+    </p>
+
+    <!-- OVERVIEW -->
+    <section class="dashboard-section">
+      <h2>1. Overview</h2>
+
+      <div class="overview-grid">
+        <article class="stat-card">
+          <p>Total Participants</p>
+          <h3 id="totalParticipants">—</h3>
+          <span>Player records</span>
+        </article>
+
+        <article class="stat-card">
+          <p>Average Game Score</p>
+          <h3 id="averageScore">—</h3>
+          <span>Out of 300</span>
+        </article>
+
+        <article class="stat-card">
+          <p>High Awareness</p>
+          <h3 id="highAwareness">—</h3>
+          <span id="highAwarenessPercent">—</span>
+        </article>
+
+        <article class="stat-card">
+          <p>Level Completion Rate</p>
+          <h3 id="completedLevels">-</h3>
+          <span id="completedLevelsSub">Across all participants</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- AWARENESS DISTRIBUTION -->
+    <section class="dashboard-section">
+      <h2>2. Cybersecurity Awareness</h2>
+
+      <div class="dashboard-panel">
+        <h3>Awareness Level Distribution</h3>
+        <p class="panel-description">
+          Distribution based on the awareness level recorded for players.
+        </p>
+
+        <div class="analytics-chart-wrap">
+          <div class="donut-chart" id="awarenessDonut">
+            <div class="donut-hole">
+              <span id="donutTotal" class="donut-total">0</span>
+              <span class="donut-subtitle">Total Players</span>
+            </div>
+          </div>
+          <div class="chart-legend" id="awarenessLegend">
+            <p>No data available.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEVEL PERFORMANCE -->
+    <section class="dashboard-section">
+      <h2>3. Level Performance Analytics</h2>
+
+      <div id="levelPerformance" class="level-grid">
+        <p>Loading level performance...</p>
+      </div>
+    </section>
+
+    <!-- COMMON WEAKNESSES -->
+    <section class="dashboard-section">
+      <h2>4. Common Cybersecurity Weaknesses</h2>
+
+      <div class="dashboard-panel">
+        <h3>Vulnerability &amp; Error Distribution</h3>
+        <p class="panel-description">
+          Comparison of common security mistakes and missed defenses across all participants.
+        </p>
+
+        <div id="weaknessChart" class="bar-chart">
+          <p>No data available.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRE-TEST AND GAMEPLAY -->
+    <section class="dashboard-section">
+      <h2>5. Pre-Test &amp; Gameplay Performance</h2>
+
+      <div class="comparison-grid">
+        <article class="dashboard-panel comparison-card">
+          <p>Average Pre-Test Score</p>
+          <h3 id="averagePreTest">—</h3>
+          <span>Out of 3 questions</span>
+        </article>
+
+        <article class="dashboard-panel comparison-card">
+          <p>Average Gameplay Stars</p>
+          <h3 id="averageStars">—</h3>
+          <span>Out of 9 stars</span>
+        </article>
+      </div>
+
+      <p class="panel-note">
+        These figures represent two different measures:
+        the pre-test measures initial knowledge, while gameplay stars
+        represent performance during the game.
+      </p>
+    </section>
+  <!-- DEMOGRAPHIC ANALYTICS -->
+    <section class="dashboard-section">
+      <h2>6. Demographic Analytics</h2>
+
+      <div class="demographic-grid">
+        <div class="dashboard-panel">
+          <h3>Average Score by Age Group</h3>
+          <p class="panel-description">Mean game performance across student age brackets.</p>
+          <div id="ageScoreChart" class="bar-chart">
+            <p>No data available.</p>
+          </div>
+        </div>
+
+        <div class="dashboard-panel">
+          <h3>Average Score by Gender</h3>
+          <p class="panel-description">Mean game performance compared across gender groups.</p>
+          <div id="genderScoreChart" class="bar-chart">
+            <p>No data available.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="dashboard-footer">
+      CyberWira Teacher Analytics Dashboard
+    </footer>
+
+  </main>
+
+  <script type="module" src="teacher-dashboard.js"></script>
+</body>
+</html>

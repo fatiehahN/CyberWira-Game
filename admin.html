@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberWira | Admin Portal</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <div class="login-container" id="loginSection">
+        <div class="login-card">
+            <h1>CyberWira</h1>
+            <p>Administrator Portal</p>
+
+            <form id="adminLoginForm">
+                <input type="email" id="adminEmail"
+                    placeholder="Admin Email" required>
+
+                <input type="password" id="adminPassword"
+                placeholder="Password" required>
+
+            <button type="button" id="forgotPasswordBtn" class="forgot-btn">
+                Forgot Password?
+            </button>
+
+            <button type="submit">Login</button>
+            <p id="loginMessage"></p>
+            </form>
+        </div>
+    </div>
+
+    <div id="dashboardSection" class="hidden">
+        <header>
+            <h2>CyberWira Admin</h2>
+            <button id="logoutBtn">Logout</button>
+        </header>
+
+        <main>
+            <h1>Admin Dashboard</h1>
+            <p>Manage schools and teacher registrations.</p>
+
+            <section class="stats">
+                <div class="stat-card">
+                    <h3 id="schoolCount">0</h3>
+                    <p>Registered Schools</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="teacherCount">0</h3>
+                    <p>Total Teachers</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="pendingCount">0</h3>
+                    <p>Pending Applications</p>
+                </div>
+            </section>
+
+            <section class="panel">
+                <h2>Register New School</h2>
+
+                <form id="schoolForm">
+                    <input type="text" id="schoolName"
+                        placeholder="School Name" required>
+
+                    <button type="submit">Register School</button>
+                </form>
+
+                <p id="schoolMessage"></p>
+            </section>
+
+            <section class="panel">
+                <h2>Registered Schools</h2>
+                <div id="schoolsList">Loading...</div>
+            </section>
+
+            <section class="panel">
+                <h2>Teacher Applications</h2>
+                <div id="teachersList">Loading...</div>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="admin.js"></script>
+</body>
+</html>
